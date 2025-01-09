@@ -1,0 +1,16 @@
+name: First workflow
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  Task-commit:
+    runs-on: self-hosted
+
+    steps:
+      - name: checkout
+        uses: "actions/checkout@v3"
+
+      - name: Run single bash line
+        run: echo "Hello this is a command from self hosted runner"
