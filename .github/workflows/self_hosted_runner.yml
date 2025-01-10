@@ -1,16 +1,15 @@
-name: First workflow
-
 on:
+  # Triggers the workflow on push events
   push:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
-  Task-commit:
-    runs-on: self-hosted
-
+  hello-world:
+    runs-on: ubuntu-latest
+    
     steps:
-      - name: checkout
-        uses: "actions/checkout@v3"
-
-      - name: Run single bash line
-        run: echo "Hello this is a command from self hosted runner"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Hello World
+        run: echo "Hello World!"
